@@ -1,6 +1,6 @@
 <?php
 
-namespace Jersyfi\VerifyEmail\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
