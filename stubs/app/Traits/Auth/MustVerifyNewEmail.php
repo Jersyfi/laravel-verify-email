@@ -4,7 +4,7 @@ namespace App\Traits\Auth;
 
 use App\Models\PendingUserEmails;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\Auth\VerifyNewEmail;
+use App\Mail\Auth\VerifyEmail;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Carbon;
 
@@ -70,7 +70,7 @@ trait MustVerifyNewEmail
     public function sendEmailVerificationMail()
     {
         return Mail::to($this->getPendingEmail())
-            ->send(new VerifyNewEmail(
+            ->send(new VerifyEmail(
                 $this->verificationUrl()
             ));
     }
