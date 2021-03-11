@@ -1,0 +1,42 @@
+{
+    "name": "jersyfi/laravel-verify-email",
+    "description": "A package for email verification in laravel",
+    "keywords": [
+        "jersyfi",
+        "laravel-verify-email",
+        "laravel-verify-new-email",
+        "laravel",
+        "verify-email",
+        "Email Verification",
+        "breeze",
+        "Laravel Breeze"
+    ],
+    "homepage": "https://github.com/jersyfi/laravel-localization",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jérôme Bastian Winkel",
+            "email": "thejersyy@gmail.com",
+            "homepage": "https://jersyfi.de"
+        }
+    ],
+    "require": {
+        "php" : "^7.3|^8.0",
+        "laravel/framework": "^8.0"
+    },
+    "suggest": {
+        "laravel/breeze": "Required to use the Laravel Breeze as a starter kit (^1.0)."
+    },
+    "autoload": {
+        "psr-4": {
+            "Jersyfi\\VerifyEmail\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jersyfi\\VerifyEmail\\VerifyEmailServiceProvider"
+            ]
+        }
+    }
+}
