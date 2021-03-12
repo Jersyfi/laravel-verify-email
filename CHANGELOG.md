@@ -2,9 +2,11 @@
 
 All notable changes to `laravel-verify-email` will be documented in this file
 
-## 0.1.2 - 2021-03-12
+## 0.2.0 - 2021-03-12
 
 - Fixed wrong class name of Mailable `VerifyEmail`
+- Added description in config
+- Added `expire` for verification link in config
 
 ## 0.1.1 - 2021-03-11
 
