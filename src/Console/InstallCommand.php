@@ -52,7 +52,7 @@ class InstallCommand extends Command
 
         // Views...
         (new Filesystem)->ensureDirectoryExists(resource_path('views/emails/auth'));
-        copy(__DIR__.'/../../stubs/resources/views/emails/auth/verifyEmail.blade.php', resource_path('views/emails/auth/verifyEmail.blade.php'));
+        copy(__DIR__.'/../../stubs/resources/views/emails/auth/verify-email.blade.php', resource_path('views/emails/auth/verify-email.blade.php'));
 
         $this->info('Verify Email scaffolding installed successfully.');
         $this->comment('Please read the documentation to complete the package installation.');
