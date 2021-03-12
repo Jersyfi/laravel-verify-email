@@ -55,10 +55,49 @@ At least you need to migrate the `%_create_pending_user_emails.php` migration.
 php artisan migrate
 ```
 
+## Configuration
+
+The configuration can be made in the config file `verify-email` or in the published files. All config values have there used file path.
+
+For the verification url the `route.for` is required or go to `app/Traits/Auth/MustVerifyNewEmail` and change it in function `verificationUrl`. When calling the varification link the `route.after` is required to redirect or go to `app/Http/Controllers/Auth/VerifyNewEmailController` and change it in function `__invoke`.
+
+```php
+'route' => [
+    'for' => 'verification.verify',
+    'after' => 'home',
+],
+```
+
+You can decide if the user's verification status resets on every email change or go to `app/Traits/Auth/MustVerifyNewEmail` and change it in function `newEmail`.
+
+```php
+'reset_verification' => true,
+```
+
+You can change the active time of the verification link with a number in minutes or go to `app/Traits/Auth/MustVerifyNewEmail` and change it in function `verificationUrl`.
+
+```php
+'expire' => 60,
+```
+
 ## Usage
+
+When you want to change to user's email you can call the user function `syncEmail`.
 
 ```php
 $request->user()->syncEmail($request->input('email'));
+```
+
+If you need to get the pending email you can call the user function `getPendingEmail`.
+
+```php
+$request->user()->getPendingEmail();
+```
+
+In case you need to clear the user's pending email call `clearPendingEmail`.
+
+```php
+$request->user()->clearPendingEmail();
 ```
 
 ## Changelog
