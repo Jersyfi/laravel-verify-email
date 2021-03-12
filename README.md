@@ -17,3 +17,19 @@ composer require jersyfi/laravel-verify-email
 
 php artisan verify-email:install
 ```
+
+
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
+## Credits
+
+- [Jérôme Bastian Winkel](https://github.com/jersyfi)
+- [All Contributors](../../contributors)
+
+This package was inspired by the [Laravel Verify New Email](https://github.com/protonemedia/laravel-verify-new-email) package by [Protone Media](https://github.com/protonemedia).
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
