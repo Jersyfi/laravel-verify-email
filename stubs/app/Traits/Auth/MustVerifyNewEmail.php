@@ -27,7 +27,7 @@ trait MustVerifyNewEmail
      *
      * @param string $email
      */
-    public function newEmail(string $email)
+    protected function newEmail(string $email)
     {
         if ($this->hasVerifiedEmail() && $this->email === $email) {
             return null;
@@ -79,7 +79,7 @@ trait MustVerifyNewEmail
      *
      * @return void
      */
-    public function sendEmailVerificationMail()
+    protected function sendEmailVerificationMail()
     {
         return Mail::to($this->getPendingEmail())
             ->send(new VerifyEmail(
