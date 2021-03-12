@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-verify-email` will be documented in this file
 
+## 1.0.0 - 2021-03-12
+
+- Added Documenation
+- Edited `newEmail` in `MustVerifyNewEmail` to protected function
+- Edited `sendEmailVerificationMail` in `MustVerifyNewEmail` to protected function
+
 ## 0.2.3 - 2021-03-12
 
 - Added description in config
