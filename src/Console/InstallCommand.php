@@ -19,7 +19,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Install the `Verify Email` scaffolding';
+    protected $description = 'Install the Verify Email scaffolding';
 
     /**
      * Execute the console command.
@@ -58,6 +58,6 @@ class InstallCommand extends Command
         $this->comment('Please read the documentation to complete the package installation.');
         $this->newLine();
         $this->comment('It is suggested to use Laravel Breeze');
-        $this->comment('type `composer require laravel/breeze`');
+        $this->comment('composer require laravel/breeze');
     }
 }
