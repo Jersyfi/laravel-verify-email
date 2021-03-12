@@ -9,6 +9,9 @@ All notable changes to `laravel-verify-email` will be documented in this file
 - Added new function `syncEmail` in Trait `MustVerifyNewEmail`
 - Added configuration options in Trait `MustVerifyNewEmail`
 - Added translation string in Mail `VerifyEmail`
+- Added translation strings in emails `verifyEmail`
+- Edited markdown view to `emails.auth.verify-email` in Mail `VerifyEmail`
+- Edited emails name to `verify-email`
 - Fixed wrong class name of Mailable `VerifyEmail`
 - Fixes security issue in function `newEmail` in `MustVerifyNewEmail`
 
