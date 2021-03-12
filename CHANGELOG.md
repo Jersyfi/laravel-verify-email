@@ -8,6 +8,7 @@ All notable changes to `laravel-verify-email` will be documented in this file
 - Added `expire` for verification link in config
 - Added new function `syncEmail` in Trait `MustVerifyNewEmail`
 - Added configuration options in Trait `MustVerifyNewEmail`
+- Added translation string in Mail `VerifyEmail`
 - Fixed wrong class name of Mailable `VerifyEmail`
 - Fixes security issue in function `newEmail` in `MustVerifyNewEmail`
 
