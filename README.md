@@ -18,6 +18,48 @@ composer require jersyfi/laravel-verify-email
 php artisan verify-email:install
 ```
 
+## Prepare your application
+
+The user model needs to use the trait `MustVerifyNewEmail`. Also it is necessary to override the default function `sendEmailVerificationNotification`.
+
+```php
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Notifications\Notifiable;
+use App\Traits\Auth\MustVerifyNewEmail;
+
+class User extends Authenticatable implements MustVerifyEmail
+{
+    use Notifiable, MustVerifyNewEmail;
+    
+    public function sendEmailVerificationNotification()
+    {
+        $this->newEmail($this->getEmailForVerification());
+    }
+}
+```
+
+In the routes you need to add the following example. You are free to customize your route name but keep in mind to update it in your config or in your auth trait `MustVerifyNewEmail`. The redirect route after verification can be changed in config or in the controller `VerifyNewEmailController`.
+
+```php
+use App\Http\Controllers\Auth\VerifyNewEmailController;
+
+Route::get('/verify-email/{id}/{hash}', [VerifyNewEmailController::class, '__invoke'])
+    ->middleware(['auth', 'signed', 'throttle:6,1'])
+    ->name('verification.verify');
+```
+
+At least you need to migrate the `%_create_pending_user_emails.php` migration.
+
+```bash
+php artisan migrate
+```
+
+## Usage
+
+```php
+$request->user()->syncEmail($request->input('email'));
+```
 
 ## Changelog
 
