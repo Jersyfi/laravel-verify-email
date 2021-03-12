@@ -4,16 +4,16 @@
 ![Packagist Version](https://img.shields.io/packagist/v/jersyfi/laravel-verify-email)
 ![GitHub License](https://img.shields.io/github/license/jersyfi/laravel-verify-email)
 
+Simple designed email verification based on the laravel email verification features. Verify Email publishes the scaffolding to your laravel application that can be easily customized based on your own application's needs. The easiest way is to use [laravel breeze](https://github.com/laravel/breeze) because it is designed the same way.
+
+It is suggested to use [laravel breeze](https://github.com/laravel/breeze) but you don't need to. When you are not using the suggested package please get familiar with [laravel email verification](https://laravel.com/docs/8.x/verification) before starting here.
+
 ## Installation
 
-You can install the package via composer
+It is also easy to install this package.
+
 ```bash
 composer require jersyfi/laravel-verify-email
-```
 
-The package is desined like [laravel breeze](https://github.com/laravel/breeze). What it does? It is publishing all the files to your laravel application so that you can work on your own. To get the project running just install it.
-
-```bash
 php artisan verify-email:install
 ```
-
