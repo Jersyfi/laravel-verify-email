@@ -33,7 +33,7 @@ class VerifyEmail extends Mailable
      */
     public function build()
     {
-        $this->subject('Verify New Email');
+        $this->subject(__('Verify new account email'));
 
         return $this->markdown('emails.auth.verifyNewEmail', [
             'url' => $this->url
