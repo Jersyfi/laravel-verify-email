@@ -10,6 +10,7 @@ All notable changes to `laravel-verify-email` will be documented in this file
 - Added configuration options in Trait `MustVerifyNewEmail`
 - Added translation string in Mail `VerifyEmail`
 - Added translation strings in emails `verifyEmail`
+- Added command comment to suggest using laravel/breeze
 - Edited markdown view to `emails.auth.verify-email` in Mail `VerifyEmail`
 - Edited emails name to `verify-email`
 - Fixed wrong class name of Mailable `VerifyEmail`
