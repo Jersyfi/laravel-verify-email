@@ -35,7 +35,7 @@ class VerifyEmail extends Mailable
     {
         $this->subject(__('Verify new account email'));
 
-        return $this->markdown('emails.auth.verifyNewEmail', [
+        return $this->markdown('emails.auth.verify-email', [
             'url' => $this->url
         ]);
     }
