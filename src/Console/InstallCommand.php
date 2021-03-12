@@ -19,7 +19,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Install the Verify email files';
+    protected $description = 'Install the `Verify Email` scaffolding';
 
     /**
      * Execute the console command.
@@ -55,6 +55,9 @@ class InstallCommand extends Command
         copy(__DIR__.'/../../stubs/resources/views/emails/auth/verifyEmail.blade.php', resource_path('views/emails/auth/verifyEmail.blade.php'));
 
         $this->info('Verify Email scaffolding installed successfully.');
-        $this->comment('Please read the documentation to complete thpackage installation.');
+        $this->comment('Please read the documentation to complete the package installation.');
+        $this->newLine();
+        $this->comment('It is suggested to use Laravel Breeze');
+        $this->comment('type `composer require laravel/breeze`');
     }
 }
