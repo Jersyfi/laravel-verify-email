@@ -11,13 +11,25 @@ use Illuminate\Support\Carbon;
 trait MustVerifyNewEmail
 {
     /**
+     * Syncronise email changes and send a new mail when email is different
+     *
+     * @param string $email
+     */
+    public function syncEmail(string $email)
+    {
+        if ($this->email !== $email || ($this->getPendingEmail() !== $email && $this->getPendingEmail() !== null)) {
+            $this->newEmail($email);
+        }
+    }
+
+    /**
      * Creates a new registration attempt and deleting all old ones
      *
      * @param string $email
      */
     public function newEmail(string $email)
     {
-        if (($this->email === $email && $this->hasVerifiedEmail()) || ($this->getPendingEmail() === $email && !$this->hasVerifiedEmail())) {
+        if ($this->hasVerifiedEmail() && $this->email === $email) {
             return null;
         }
 
@@ -84,8 +96,8 @@ trait MustVerifyNewEmail
     protected function verificationUrl()
     {
         return URL::temporarySignedRoute(
-            'verification.verify',
-            Carbon::now()->addMinutes(config('auth.verification.expire', 60)),
+            config('verify-email.route.for', 'verification.verify'),
+            Carbon::now()->addMinutes(config('verify-email.expire', 60)),
             [
                 'id' => $this->getKey(),
                 'hash' => sha1($this->getEmailForVerification()),
